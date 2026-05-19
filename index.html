@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>FreshMart Supermarket</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#eefbf0;
+overflow-x:hidden;
+}
+
+/* LOGIN */
+
+.login-page{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1600&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+}
+
+.login-box{
+width:380px;
+padding:45px;
+border-radius:30px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(14px);
+text-align:center;
+border:1px solid rgba(255,255,255,.2);
+box-shadow:0 15px 40px rgba(0,0,0,.4);
+}
+
+.login-box h1{
+font-size:52px;
+color:white;
+margin-bottom:10px;
+}
+
+.login-box p{
+color:#e5e5e5;
+margin-bottom:25px;
+}
+
+.login-box input{
+width:100%;
+padding:15px;
+margin:12px 0;
+border:none;
+outline:none;
+border-radius:14px;
+font-size:15px;
+}
+
+.login-box button{
+width:100%;
+padding:15px;
+border:none;
+border-radius:14px;
+background:linear-gradient(135deg,#22c55e,#15803d);
+color:white;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+.login-box button:hover{
+transform:scale(1.03);
+}
+
+/* HEADER */
+
+header{
+position:sticky;
+top:0;
+z-index:1000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 7%;
+background:rgba(10,70,35,.92);
+backdrop-filter:blur(12px);
+box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+.logo{
+font-size:42px;
+font-weight:800;
+color:white;
+}
+
+nav{
+display:flex;
+gap:30px;
+align-items:center;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+font-weight:600;
+font-size:17px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#bbf7d0;
+}
+
+.nav-buttons{
+display:flex;
+gap:15px;
+}
+
+.nav-buttons button{
+padding:12px 22px;
+border:none;
+border-radius:40px;
+background:linear-gradient(135deg,#22c55e,#15803d);
+color:white;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+.nav-buttons button:hover{
+transform:scale(1.05);
+}
+
+/* HERO */
+
+.hero{
+height:95vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+background-size:cover;
+background-position:center;
+animation:slideShow 18s infinite;
+position:relative;
+}
+
+.hero::before{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.55);
+top:0;
+left:0;
+}
+
+.hero-content{
+position:relative;
+z-index:10;
+}
+
+.hero-content h1{
+font-size:72px;
+margin-bottom:20px;
+line-height:1.2;
+}
+
+.hero-content p{
+font-size:24px;
+margin-bottom:30px;
+}
+
+.hero-content button{
+padding:18px 45px;
+border:none;
+border-radius:50px;
+background:linear-gradient(135deg,#22c55e,#15803d);
+color:white;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+.hero-content button:hover{
+transform:translateY(-5px);
+}
+
+@keyframes slideShow{
+
+0%{
+background-image:url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1600&auto=format&fit=crop');
+}
+
+33%{
+background-image:url('https://images.unsplash.com/photo-1573246123716-6b1782bfc499?q=80&w=1600&auto=format&fit=crop');
+}
+
+66%{
+background-image:url('https://images.unsplash.com/photo-1608686207856-001b95cf60ca?q=80&w=1600&auto=format&fit=crop');
+}
+
+100%{
+background-image:url('https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1600&auto=format&fit=crop');
+}
+
+}
+
+/* DELIVERY */
+
+.delivery{
+background:linear-gradient(135deg,#166534,#22c55e);
+padding:18px;
+text-align:center;
+color:white;
+font-size:18px;
+font-weight:600;
+}
+
+/* SEARCH */
+
+.search-box{
+padding:50px 7% 20px;
+text-align:center;
+}
+
+.search-box input{
+width:350px;
+max-width:90%;
+padding:15px 20px;
+border:none;
+border-radius:40px;
+font-size:16px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+outline:none;
+}
+
+/* SECTION */
+
+.section-title{
+text-align:center;
+font-size:48px;
+color:#166534;
+margin:40px 0;
+}
+
+/* PRODUCTS */
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+padding:0 7% 70px;
+}
+
+.card{
+background:white;
+border-radius:28px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+transition:.4s;
+position:relative;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.03);
+box-shadow:0 20px 35px rgba(0,0,0,.15);
+}
+
+.card img{
+width:100%;
+height:230px;
+object-fit:cover;
+}
+
+.badge{
+position:absolute;
+top:15px;
+left:15px;
+background:#ef4444;
+color:white;
+padding:8px 14px;
+border-radius:30px;
+font-size:12px;
+font-weight:700;
+}
+
+.card h3{
+text-align:center;
+margin-top:18px;
+font-size:24px;
+}
+
+.card p{
+text-align:center;
+font-size:18px;
+font-weight:700;
+color:#16a34a;
+margin:10px 0;
+}
+
+.qty{
+width:80%;
+margin:10px auto;
+display:block;
+padding:12px;
+border-radius:12px;
+border:1px solid #ccc;
+font-size:15px;
+outline:none;
+}
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:12px;
+padding:20px;
+}
+
+.buttons button{
+padding:12px 18px;
+border:none;
+border-radius:40px;
+background:linear-gradient(135deg,#22c55e,#15803d);
+color:white;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.buttons button:hover{
+transform:scale(1.05);
+}
+
+/* OFFERS */
+
+.offers{
+padding:90px 7%;
+background:linear-gradient(135deg,#14532d,#16a34a,#22c55e);
+color:white;
+text-align:center;
+}
+
+.offers h1{
+font-size:52px;
+margin-bottom:50px;
+}
+
+.offer-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
+
+.offer-box{
+padding:45px;
+border-radius:30px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.2);
+transition:.3s;
+}
+
+.offer-box:hover{
+transform:translateY(-8px);
+}
+
+/* WHY */
+
+.why{
+padding:90px 7%;
+text-align:center;
+}
+
+.why h1{
+font-size:50px;
+color:#166534;
+margin-bottom:50px;
+}
+
+.why-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.why-box{
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.why-box:hover{
+transform:translateY(-10px);
+}
+
+/* CONTACT */
+
+.contact{
+padding:90px 7%;
+background:linear-gradient(135deg,#14532d,#16a34a);
+display:flex;
+justify-content:center;
+}
+
+.contact-box{
+background:white;
+padding:50px;
+width:700px;
+border-radius:30px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.contact-box h1{
+font-size:45px;
+color:#166534;
+margin-bottom:20px;
+}
+
+/* FOOTER */
+
+footer{
+background:#0f172a;
+padding:25px;
+text-align:center;
+color:white;
+}
+
+/* TOAST */
+
+#toast{
+position:fixed;
+bottom:30px;
+right:30px;
+background:#16a34a;
+color:white;
+padding:16px 24px;
+border-radius:12px;
+display:none;
+font-weight:600;
+z-index:5000;
+}
+
+/* PAYMENT */
+
+.payment-modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:9999;
+}
+
+.payment-box{
+background:white;
+padding:40px;
+border-radius:25px;
+width:400px;
+max-height:90vh;
+overflow:auto;
+animation:pop .3s ease;
+}
+
+.payment-box h2{
+margin-bottom:25px;
+color:#166534;
+text-align:center;
+}
+
+.payment-options{
+display:flex;
+flex-direction:column;
+gap:15px;
+margin-top:20px;
+}
+
+.payment-options button{
+padding:15px;
+border:none;
+border-radius:15px;
+background:linear-gradient(135deg,#22c55e,#15803d);
+color:white;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+}
+
+.close-btn{
+margin-top:20px;
+padding:12px 20px;
+border:none;
+border-radius:12px;
+background:#ef4444;
+color:white;
+cursor:pointer;
+width:100%;
+}
+
+/* SUCCESS */
+
+.success-popup{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+display:none;
+justify-content:center;
+align-items:center;
+z-index:10000;
+}
+
+.success-content{
+background:white;
+padding:50px;
+border-radius:30px;
+text-align:center;
+animation:pop .4s ease;
+}
+
+.tick{
+width:90px;
+height:90px;
+background:#22c55e;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:45px;
+color:white;
+margin:auto;
+margin-bottom:20px;
+}
+
+@keyframes pop{
+
+0%{
+transform:scale(.5);
+opacity:0;
+}
+
+100%{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+@media(max-width:900px){
+
+header{
+flex-direction:column;
+gap:20px;
+}
+
+nav{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.hero-content h1{
+font-size:42px;
+}
+
+.hero-content p{
+font-size:18px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+
+<div class="login-page" id="loginPage">
+
+<div class="login-box">
+
+<h1>FreshMart</h1>
+
+<p>Fresh Grocery & Daily Essentials</p>
+
+<input type="text" id="username" placeholder="Enter Username">
+
+<input type="password" id="password" placeholder="Enter Password">
+
+<button onclick="login()">Login</button>
+
+</div>
+
+</div>
+
+<!-- WEBSITE -->
+
+<div id="website" style="display:none;">
+
+<header>
+
+<div class="logo">FreshMart</div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#categories">Categories</a>
+<a href="#offers">Offers</a>
+<a href="#why">Why Us</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<div class="nav-buttons">
+
+<button onclick="openWishlist()">
+❤️ Wishlist <span id="wishCount">0</span>
+</button>
+
+<button onclick="openCart()">
+🛒 Cart <span id="cartCount">0</span>
+</button>
+
+</div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>Fresh & Healthy Grocery Delivery</h1>
+
+<p>Farm Fresh Vegetables, Fruits & Groceries</p>
+
+<button onclick="document.getElementById('categories').scrollIntoView()">
+Shop Now
+</button>
+
+</div>
+
+</section>
+
+<div class="delivery">
+🚚 Free Delivery Above ₹499 | Delivery Within 30 Minutes
+</div>
+
+<!-- SEARCH -->
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search Products..." onkeyup="searchProduct()">
+</div>
+
+<!-- VEGETABLES -->
+
+<section id="categories">
+
+<h1 class="section-title">Fresh Vegetables</h1>
+
+<div class="product-grid">
+
+<div class="card">
+<span class="badge">20% OFF</span>
+<img src="https://images.unsplash.com/photo-1546094096-0df4bcaaa337?q=80&w=1200&auto=format&fit=crop">
+<h3>Tomato</h3>
+<p>₹40/kg</p>
+
+<select class="qty" id="qty-Tomato">
+<option value="1">1 Kg</option>
+<option value="2">2 Kg</option>
+<option value="5">5 Kg</option>
+</select>
+
+<div class="buttons">
+<button onclick="addCart('Tomato')">🛒 Add Cart</button>
+<button onclick="addWishlist('Tomato')">❤️ Wishlist</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?q=80&w=1200&auto=format&fit=crop">
+<h3>Carrot</h3>
+<p>₹35/kg</p>
+
+<select class="qty" id="qty-Carrot">
+<option value="1">1 Kg</option>
+<option value="2">2 Kg</option>
+<option value="5">5 Kg</option>
+</select>
+
+<div class="buttons">
+<button onclick="addCart('Carrot')">🛒 Add Cart</button>
+<button onclick="addWishlist('Carrot')">❤️ Wishlist</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1518843875459-f738682238a6?q=80&w=1200&auto=format&fit=crop">
+<h3>Greens</h3>
+<p>₹20/kg</p>
+
+<select class="qty" id="qty-Greens">
+<option value="1">1 Kg</option>
+<option value="2">2 Kg</option>
+<option value="5">5 Kg</option>
+</select>
+
+<div class="buttons">
+<button onclick="addCart('Greens')">🛒 Add Cart</button>
+<button onclick="addWishlist('Greens')">❤️ Wishlist</button>
+</div>
+</div>
+
+<!-- BEANS -->
+
+<div class="card">
+<span class="badge">Fresh</span>
+
+<img src="https://images.unsplash.com/photo-1518977676601-b53f82aba655?q=80&w=1200&auto=format&fit=crop">
+
+<h3>potato</h3>
+
+<p>₹45/kg</p>
+
+<select class="qty" id="qty-Beans">
+<option value="1">1 Kg</option>
+<option value="2">2 Kg</option>
+<option value="5">5 Kg</option>
+</select>
+
+<div class="buttons">
+
+<button onclick="addCart('potato')">
+🛒 Add Cart
+</button>
+
+<button onclick="addWishlist('potato')">
+❤️ Wishlist
+</button>
+
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- FRUITS -->
+
+<h1 class="section-title">Fresh Fruits</h1>
+
+<div class="product-grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=1200&auto=format&fit=crop">
+<h3>Apple</h3>
+<p>₹120/kg</p>
+
+<select class="qty" id="qty-Apple">
+<option value="1">1 Kg</option>
+<option value="2">2 Kg</option>
+<option value="5">5 Kg</option>
+</select>
+
+<div class="buttons">
+<button onclick="addCart('Apple')">🛒 Add Cart</button>
+<button onclick="addWishlist('Apple')">❤️ Wishlist</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1547514701-42782101795e?q=80&w=1200&auto=format&fit=crop">
+<h3>Orange</h3>
+<p>₹90/kg</p>
+
+<select class="qty" id="qty-Orange">
+<option value="1">1 Kg</option>
+<option value="2">2 Kg</option>
+<option value="5">5 Kg</option>
+</select>
+
+<div class="buttons">
+<button onclick="addCart('Orange')">🛒 Add Cart</button>
+<button onclick="addWishlist('Orange')">❤️ Wishlist</button>
+</div>
+</div>
+
+<!-- WATERMELON -->
+
+<div class="card">
+
+<span class="badge">Best Seller</span>
+
+<img src="https://images.unsplash.com/photo-1563114773-84221bd62daa?q=80&w=1200&auto=format&fit=crop">
+
+<h3>Watermelon</h3>
+
+<p>₹50/kg</p>
+
+<select class="qty" id="qty-Watermelon">
+<option value="1">1 Kg</option>
+<option value="2">2 Kg</option>
+<option value="5">5 Kg</option>
+</select>
+
+<div class="buttons">
+
+<button onclick="addCart('Watermelon')">
+🛒 Add Cart
+</button>
+
+<button onclick="addWishlist('Watermelon')">
+❤️ Wishlist
+</button>
+
+</div>
+</div>
+
+<!-- MANGO -->
+
+<div class="card">
+
+<span class="badge">Organic</span>
+
+<img src="https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=1200&auto=format&fit=crop">
+
+<h3>Mango</h3>
+
+<p>₹80/kg</p>
+
+<select class="qty" id="qty-Mango">
+<option value="1">1 Kg</option>
+<option value="2">2 Kg</option>
+<option value="5">5 Kg</option>
+</select>
+
+<div class="buttons">
+
+<button onclick="addCart('Mango')">
+🛒 Add Cart
+</button>
+
+<button onclick="addWishlist('Mango')">
+❤️ Wishlist
+</button>
+
+</div>
+</div>
+
+</div>
+
+<!-- GROCERY -->
+
+<h1 class="section-title">Groceries</h1>
+
+<div class="product-grid">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=1200&auto=format&fit=crop">
+<h3>Rice</h3>
+<p>₹65/kg</p>
+
+<select class="qty" id="qty-Rice">
+<option value="1">1 Kg</option>
+<option value="2">2 Kg</option>
+<option value="5">5 Kg</option>
+</select>
+
+<div class="buttons">
+<button onclick="addCart('Rice')">🛒 Add Cart</button>
+<button onclick="addWishlist('Rice')">❤️ Wishlist</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?q=80&w=1200&auto=format&fit=crop">
+<h3>Cooking Oil</h3>
+<p>₹150/litre</p>
+
+<select class="qty" id="qty-Cooking Oil">
+<option value="1">1 Litre</option>
+<option value="2">2 Litre</option>
+<option value="5">5 Litre</option>
+</select>
+
+<div class="buttons">
+<button onclick="addCart('Cooking Oil')">🛒 Add Cart</button>
+<button onclick="addWishlist('Cooking Oil')">❤️ Wishlist</button>
+</div>
+</div>
+
+<!-- WHEAT FLOUR -->
+
+<div class="card">
+
+<span class="badge">Healthy</span>
+
+<img src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?q=80&w=1200&auto=format&fit=crop">
+
+<h3>Wheat Flour</h3>
+
+<p>₹55/kg</p>
+
+<select class="qty" id="qty-Wheat Flour">
+<option value="1">1 Kg</option>
+<option value="2">2 Kg</option>
+<option value="5">5 Kg</option>
+</select>
+
+<div class="buttons">
+
+<button onclick="addCart('Wheat Flour')">
+🛒 Add Cart
+</button>
+
+<button onclick="addWishlist('Wheat Flour')">
+❤️ Wishlist
+</button>
+
+</div>
+</div>
+
+<!-- SUGAR -->
+
+<div class="card">
+
+<span class="badge">10% OFF</span>
+
+<img src="C:\Users\2006s\OneDrive\Desktop\supermarket\images\sugar - Copy.jpg">
+
+<h3>Sugar</h3>
+
+<p>₹48/kg</p>
+
+<select class="qty" id="qty-Sugar">
+<option value="1">1 Kg</option>
+<option value="2">2 Kg</option>
+<option value="5">5 Kg</option>
+</select>
+
+<div class="buttons">
+
+<button onclick="addCart('Sugar')">
+🛒 Add Cart
+</button>
+
+<button onclick="addWishlist('Sugar')">
+❤️ Wishlist
+</button>
+
+</div>
+</div>
+
+</div>
+
+<!-- OFFERS -->
+
+<section class="offers" id="offers">
+
+<h1>Festival Offers</h1>
+
+<div class="offer-container">
+
+<div class="offer-box">
+<h2>Diwali Mega Sale</h2>
+<p>Up To 50% OFF</p>
+</div>
+
+<div class="offer-box">
+<h2>Weekend Offer</h2>
+<p>Buy 2 Get 1 Free</p>
+</div>
+
+<div class="offer-box">
+<h2>Fresh Fruits Sale</h2>
+<p>Flat ₹200 OFF</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- WHY -->
+
+<section class="why" id="why">
+
+<h1>Why Choose FreshMart</h1>
+
+<div class="why-container">
+
+<div class="why-box">
+<h2>Fresh Products</h2>
+<p>Daily Fresh Vegetables & Fruits</p>
+</div>
+
+<div class="why-box">
+<h2>Fast Delivery</h2>
+<p>Safe & Quick Delivery Service</p>
+</div>
+
+<div class="why-box">
+<h2>Secure Payment</h2>
+<p>GPay, PhonePe & COD</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="contact-box">
+
+<h1>Contact Us</h1>
+
+<p>📍 Chennai, Tamil Nadu</p>
+<p>📞 +91 9876543210</p>
+<p>📧 freshmart@gmail.com</p>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 FreshMart Supermarket
+</footer>
+<!-- ORDER TRACKING -->
+
+<section id="trackingSection" style="display:none; padding:60px 7%;">
+
+<h1 class="section-title">Track Your Order</h1>
+
+<div style="
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+max-width:750px;
+margin:auto;
+text-align:center;
+">
+
+<h2 id="trackText" style="color:#16a34a; margin-bottom:30px;">
+🧑‍🍳 Preparing Your Order...
+</h2>
+
+<!-- TRACK BAR -->
+
+<div style="
+width:100%;
+height:18px;
+background:#d1fae5;
+border-radius:30px;
+overflow:hidden;
+margin-bottom:25px;
+">
+
+<div id="trackBar" style="
+width:10%;
+height:100%;
+background:linear-gradient(135deg,#22c55e,#15803d);
+border-radius:30px;
+transition:1s;
+">
+</div>
+
+</div>
+
+<!-- DELIVERY BOY -->
+
+<div id="bike" style="
+font-size:55px;
+transition:1s;
+margin-left:0%;
+">
+🛵
+</div>
+
+<p style="margin-top:20px; font-size:18px;">
+Live Delivery Tracking
+</p>
+
+</div>
+
+</section>
+</div>
+
+<!-- TOAST -->
+
+<div id="toast"></div>
+
+<!-- PAYMENT -->
+
+<div id="paymentModal" class="payment-modal">
+
+<div class="payment-box">
+
+<h2>Your Cart</h2>
+
+<ul id="cartItems" style="line-height:2;"></ul>
+
+<h3 style="margin-top:20px;">
+Total : ₹<span id="totalAmount">0</span>
+</h3>
+
+<div class="payment-options">
+
+<button onclick="placeOrder('GPay')">
+💳 Pay With GPay
+</button>
+
+<button onclick="placeOrder('PhonePe')">
+📱 Pay With PhonePe
+</button>
+
+<button onclick="placeOrder('Cash On Delivery')">
+🚚 Cash On Delivery
+</button>
+
+</div>
+
+<button class="close-btn" onclick="closePayment()">
+Close
+</button>
+
+</div>
+
+</div>
+
+<!-- SUCCESS -->
+
+<div id="successPopup" class="success-popup">
+
+<div class="success-content">
+
+<div class="tick">✔</div>
+
+<h1>Order Confirmed 🎉</h1>
+
+<p>🚚 Your Order Is On The Way</p>
+
+</div>
+
+</div>
+
+<audio id="successSound">
+<source src="https://www.soundjay.com/buttons/sounds/button-3.mp3">
+</audio>
+
+<script>
+
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+
+let products = {
+"Tomato":40,
+"Carrot":35,
+"Greens":20,
+"Beans":45,
+"Apple":120,
+"Orange":90,
+"Watermelon":50,
+"Mango":80,
+"Rice":65,
+"Cooking Oil":150,
+"Wheat Flour":55,
+"Sugar":48
+};
+
+updateCounts();
+
+/* LOGIN */
+
+function login(){
+
+let user = document.getElementById("username").value;
+let pass = document.getElementById("password").value;
+
+if(user !== "" && pass !== ""){
+
+document.getElementById("loginPage").style.display = "none";
+document.getElementById("website").style.display = "block";
+
+showToast("Login Successful");
+
+}else{
+
+alert("Enter Username & Password");
+
+}
+
+}
+
+/* TOAST */
+
+function showToast(message){
+
+let toast = document.getElementById("toast");
+
+toast.innerText = message;
+
+toast.style.display = "block";
+
+setTimeout(()=>{
+
+toast.style.display = "none";
+
+},2000);
+
+}
+
+/* UPDATE */
+
+function updateCounts(){
+
+document.getElementById("cartCount").innerText = cart.length;
+
+document.getElementById("wishCount").innerText = wishlist.length;
+
+localStorage.setItem("cart", JSON.stringify(cart));
+localStorage.setItem("wishlist", JSON.stringify(wishlist));
+
+}
+
+/* ADD CART */
+
+function addCart(product){
+
+let qty = document.getElementById("qty-" + product).value;
+
+let itemPrice = products[product] * qty;
+
+cart.push({
+name:product,
+qty:qty,
+price:itemPrice
+});
+
+updateCounts();
+
+showToast(qty + " Kg " + product + " Added");
+
+}
+
+/* WISHLIST */
+
+function addWishlist(product){
+
+wishlist.push(product);
+
+updateCounts();
+
+showToast(product + " Added To Wishlist");
+
+}
+
+/* CART */
+
+function openCart(){
+
+if(cart.length === 0){
+
+alert("Cart Empty");
+return;
+
+}
+
+let cartItems = document.getElementById("cartItems");
+
+cartItems.innerHTML = "";
+
+let total = 0;
+
+cart.forEach(item=>{
+
+let li = document.createElement("li");
+
+li.innerHTML =
+"🛒 " +
+item.name +
+" - " +
+item.qty +
+" Kg = ₹" +
+item.price;
+
+cartItems.appendChild(li);
+
+total += item.price;
+
+});
+
+document.getElementById("totalAmount").innerText = total;
+
+document.getElementById("paymentModal").style.display = "flex";
+
+}
+
+/* CLOSE */
+
+function closePayment(){
+
+document.getElementById("paymentModal").style.display = "none";
+
+}
+
+/* ORDER */
+function placeOrder(method){
+
+document.getElementById("paymentModal").style.display = "none";
+
+document.getElementById("successPopup").style.display = "flex";
+
+document.getElementById("successSound").play();
+
+showToast("🚚 Order Placed Successfully");
+
+document.getElementById("trackingSection").style.display = "block";
+
+let trackText = document.getElementById("trackText");
+
+let trackBar = document.getElementById("trackBar");
+
+let bike = document.getElementById("bike");
+
+/* STEP 1 */
+
+trackText.innerHTML = "🧑‍🍳 Preparing Your Order...";
+
+trackBar.style.width = "20%";
+
+bike.style.marginLeft = "10%";
+
+/* STEP 2 */
+
+setTimeout(()=>{
+
+trackText.innerHTML = "📦 Packing Your Order";
+
+trackBar.style.width = "40%";
+
+bike.style.marginLeft = "30%";
+
+},3000);
+
+/* STEP 3 */
+
+setTimeout(()=>{
+
+trackText.innerHTML = "🛵 Delivery Partner Picked Up";
+
+trackBar.style.width = "65%";
+
+bike.style.marginLeft = "55%";
+
+},6000);
+
+/* STEP 4 */
+
+setTimeout(()=>{
+
+trackText.innerHTML = "🚚 Order Is On The Way";
+
+trackBar.style.width = "85%";
+
+bike.style.marginLeft = "75%";
+
+},9000);
+
+/* STEP 5 */
+
+setTimeout(()=>{
+
+trackText.innerHTML = "✅ Order Delivered Successfully";
+
+trackBar.style.width = "100%";
+
+bike.style.marginLeft = "90%";
+
+},12000);
+
+cart = [];
+
+updateCounts();
+
+setTimeout(()=>{
+
+document.getElementById("successPopup").style.display = "none";
+
+},4000);
+
+}
+
+/* WISHLIST */
+
+function openWishlist(){
+
+if(wishlist.length === 0){
+
+alert("Wishlist Empty");
+return;
+
+}
+
+alert("Wishlist:\n\n" + wishlist.join("\n"));
+
+}
+
+/* SEARCH */
+
+function searchProduct(){
+
+let input =
+document.getElementById("searchInput")
+.value
+.toLowerCase();
+
+let cards = document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+let title =
+card.querySelector("h3")
+.innerText
+.toLowerCase();
+
+if(title.includes(input)){
+
+card.style.display = "block";
+
+}else{
+
+card.style.display = "none";
+
+}
+
+});
+
+}
+
+</script>
+
+</body>
+</html>
